@@ -1,0 +1,127 @@
+:root {
+    --color1: linear-gradient(to right, rgb(249, 76, 249), rgb(122, 9, 122)70%);
+    --color2: linear-gradient(to right, #ff00ff, #8000ff);
+    --color3: linear-gradient(to right, purple 50%, skyblue 20%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-padding-top: 8em;
+    scroll-behavior: smooth;
+}
+
+.contact-me,
+.recent-work {
+    transition: transform 0.2s linear;
+}
+
+.contact-me:hover,
+.recent-work:hover {
+    transform: scale(0.9);
+}
+
+.nav-link:hover {
+    color: violet;
+    border-radius: 20px;
+}
+
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+body {
+    background-image: url('canva\ stars.png');
+}
+
+
+.navbar-toggler:hover {
+    background-color: #1d1d1d;
+    opacity: 0.7;
+}
+
+.navbar {
+    backdrop-filter: blur(20px) saturate(150%) brightness(150%);
+}
+
+.home-page {
+    margin-top: 7em;
+}
+
+.display-3>span {
+    background: var(--color1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.icons i {
+    transition: transform 0.3s ease;
+}
+
+.icons i:hover {
+    transform: translateY(-10px);
+}
+
+.col-4>img {
+    border-radius: 70em;
+}
+
+/* RESPONSIVE DESIGNE EX-MD*/
+@media (max-width: 768px) {
+
+    .display-3 {
+        font-size: 2em;
+        line-height: 1.1;
+    }
+
+    .display-3>span {
+        font-size: inherit;
+    }
+
+    .intro-text p {
+        font-size: 0.7rem;
+        margin-top: .5rem;
+    }
+
+    .text-center {
+        text-align: center !important;
+    }
+}
+
+/* RESPONSIVE DESIGN LG */
+@media (max-width: 992px) {
+    .display-3 {
+        font-size: 2.3em;
+        line-height: 1.1;
+    }
+
+    .display-3>span {
+        font-size: inherit;
+    }
+
+    .intro-text p {
+        font-size: 0.9rem;
+        margin-top: .5rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .about-me-text1,
+    .about-me-text2 {
+        font-size: 0.8em;
+    }
+
+    .about-me {
+        margin-top: 6em;
+    }
+}
