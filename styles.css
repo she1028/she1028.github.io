@@ -34,12 +34,14 @@ body {
 }
 
 .contact-me,
+.view-more-projects,
 .recent-work,
 .view-website {
     transition: transform 0.2s linear;
 }
 
 .contact-me:hover,
+.view-more-projects:hover,
 .recent-work:hover {
     transform: scale(0.9);
 }
