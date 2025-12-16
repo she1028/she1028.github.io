@@ -28,20 +28,21 @@ body {
     background-size: cover;
     background-position: center;
 }
+
 .card-holder:hover img {
-            transform: scale(1.1);
-            transition: transform 0.5s ease;
-        }
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+}
 
-        .card-img {
-            transition: transform 0.5s ease;
-        }
+.card-img {
+    transition: transform 0.5s ease;
+}
 
-        .explore-text {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
+.explore-text {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
 
-        .card:hover .explore-text {
-            opacity: 1;
-        }
+.card:hover .explore-text {
+    opacity: 1;
+}
