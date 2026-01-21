@@ -20,7 +20,7 @@ body {
     scroll-behavior: smooth;
 }
 
-.view-website {
+.view-website, .view-github {
     background: linear-gradient(to right, #ff00ff, #8000ff);
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
@@ -28,7 +28,7 @@ body {
     display: inline-block;
 }
 
-.view-website:hover {
+.view-website, .view-github:hover {
     transform: scale(0.9);
 }
 
@@ -164,5 +164,236 @@ body {
 
     .about-me {
         margin-top: 6em;
+    }
+}
+
+.carousel-3d-container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 40px 80px;
+    min-height: 650px;
+}
+
+.carousel-3d-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    perspective: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-card {
+    position: absolute;
+    width: 650px;
+    max-width: 90%;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+    transform: translateX(0) scale(0.8) translateZ(-200px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.carousel-card.active {
+    opacity: 1;
+    transform: translateX(0) scale(1) translateZ(0);
+    z-index: 3;
+    pointer-events: all;
+}
+
+.carousel-card.prev {
+    opacity: 0.6;
+    transform: translateX(-350px) scale(0.85) translateZ(-150px) rotateY(15deg);
+    z-index: 2;
+    pointer-events: all;
+}
+
+.carousel-card.next {
+    opacity: 0.6;
+    transform: translateX(350px) scale(0.85) translateZ(-150px) rotateY(-15deg);
+    z-index: 2;
+    pointer-events: all;
+}
+
+.carousel-card .card-content {
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.carousel-card.active .card-content {
+    box-shadow: 0 20px 60px rgba(255, 0, 255, 0.3);
+}
+
+.carousel-btn-3d {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 0, 255, 0.7);
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.carousel-btn-3d:hover {
+    background: rgba(128, 0, 255, 0.9);
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 5px 20px rgba(255, 0, 255, 0.5);
+}
+
+.carousel-prev-3d {
+    left: 10px;
+}
+
+.carousel-next-3d {
+    right: 10px;
+}
+
+.carousel-indicators-3d {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.indicator-3d {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.indicator-3d.active {
+    background: #ff00ff;
+    transform: scale(1.4);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+}
+
+.indicator-3d:hover {
+    background: rgba(255, 0, 255, 0.7);
+    border-color: #ff00ff;
+}
+.view-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;      
+    overflow: hidden;  
+    padding: 0.5rem 0.75rem;
+    transition: transform 0.35s ease;
+}
+
+.view-github .btn-text {
+    white-space: nowrap;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;         
+    transition: max-width 0.35s ease, opacity 0.25s ease 0.1s;
+}
+
+.view-github:hover {
+    transform: translateX(16px);
+}
+
+.view-github:hover .btn-text {
+    max-width: 160px;
+    opacity: 1;         
+}
+
+.b-icon{
+    display: inline-block;
+    opacity: 1;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .carousel-card.prev {
+        transform: translateX(-280px) scale(0.8) translateZ(-120px) rotateY(12deg);
+    }
+    
+    .carousel-card.next {
+        transform: translateX(280px) scale(0.8) translateZ(-120px) rotateY(-12deg);
+    }
+}
+
+@media (max-width: 992px) {
+    .carousel-3d-container {
+        padding: 40px 60px;
+    }
+    
+    .carousel-card {
+        width: 550px;
+    }
+    
+    .carousel-card.prev {
+        transform: translateX(-220px) scale(0.75) translateZ(-100px) rotateY(10deg);
+    }
+    
+    .carousel-card.next {
+        transform: translateX(220px) scale(0.75) translateZ(-100px) rotateY(-10deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-3d-container {
+        padding: 40px 20px;
+        min-height: 550px;
+    }
+    
+    .carousel-3d-wrapper {
+        height: 500px;
+    }
+    
+    .carousel-card {
+        width: 90%;
+        max-width: 450px;
+    }
+    
+    .carousel-card.prev,
+    .carousel-card.next {
+        opacity: 0.3;
+        transform: translateX(0) scale(0.7) translateZ(-150px);
+    }
+    
+    .carousel-card.prev {
+        transform: translateX(-50px) scale(0.7) translateZ(-150px);
+    }
+    
+    .carousel-card.next {
+        transform: translateX(50px) scale(0.7) translateZ(-150px);
+    }
+    
+    .carousel-btn-3d {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-card.prev,
+    .carousel-card.next {
+        opacity: 0.2;
+        transform: scale(0.65) translateZ(-200px);
     }
 }
