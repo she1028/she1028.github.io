@@ -55,8 +55,9 @@ body {
     color: white;
 }
 
+
 body {
-    background-image: url('main_assets/img/canva\ stars.png');
+    background-image: url('../../main_assets/img/canva\ stars.png');
 }
 
 
@@ -65,8 +66,9 @@ body {
     opacity: 0.7;
 }
 
-.navbar {
-    backdrop-filter: blur(20px) saturate(150%) brightness(150%);
+
+.side-container {
+    backdrop-filter: blur(20px) saturate(150%) brightness(50%);
 }
 
 .about-container {
@@ -75,7 +77,7 @@ body {
 }
 
 .home-page {
-    margin-top: 7em;
+    margin-top: 5em;
 }
 
 .display-3>span,
