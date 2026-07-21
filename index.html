@@ -15,27 +15,25 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
   <link href="main_assets/Cuenca_logo.png" rel="icon">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="static/css/styles.css">
 </head>
 
 <body>
 
   <!-- NAV BAR -->
-  <nav class="navbar navbar-dark fixed-top ">
+  <nav class="navbar navbar-light fixed-top z-1000">
     <button class="navbar-toggler ms-4 fs-6" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu"
       aria-controls="sidebarMenu" aria-label="Open navigation menu">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand ms-auto me-4" href="index.html">
-      <img src="../../main_assets/img/Cuenca_logo.png" alt="Logo" width="45">
-    </a>
+   
 
     <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="sidebarMenu"
       aria-labelledby="sidebarMenuLabel" style="--bs-offcanvas-width: 200px;">
 
       <div class="offcanvas-header">
         <a class="navbar-brand" href="index.html" id="sidebarMenuLabel">
-          <img src="../../main_assets/img/Cuenca_logo.png" alt="Logo" width="30">
+          <img src="main_assets/img/Cuenca_logo.png" alt="Logo" width="45">
         </a>
 
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -67,40 +65,42 @@
 
   <!-- Home Section-->
   <section id="home">
-    <div class="row g-0 home-page align-items-center justify-content-center p-md-3">
-      <div class="col-xxl-6 px-3 col-xl-6 col-lg-5 col-md-10 col-sm-11 order-2 order-md-2 order-lg-1">
-        <div class="text-center text-lg-start home-text">
-          <div class="display-3 text-light fw-bold fs-md-3 fs-lg-4 pt-3">Hi, I'm <span>Shella May</span> Cuenca
-          </div>
-          <p class="text-light fst-italic">Polytechnic University of the Philippines</p>
-          <div class="intro-text text-light fw-light fs-6 fs-lg-6">
-            <p>
-              An aspiring Web Developer, turning creative ideas into digital experiences.
-              With a keen eye for design and a passion for clean, functional code, strives to build websites that
-              are
-              both
-              visually engaging and user-friendly.
-            </p>
-            <div class="container">
-              <div class="row linkInAboutMe justify-content-center justify-content-lg-start">
-                <a class="recent-work col-xxl-5 col-xl-4 col-lg-5 col-xs-6 col-sm-5 view-my-work rounded-5 m-1 px-4 py-2 text-white text-decoration-none me-1 text-center"
-                  style="background: linear-gradient(to right, #ff00ff, #8000ff); 
+    <div class="container-fluid g-0 home-page d-flex flex-row align-items-center justify-content-between">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-xxl-6 col-xl-6 col-lg-5 col-md-10 col-sm-11 order-2 order-md-2 order-lg-1">
+          <div class="text-center text-lg-start home-text">
+            <div class="display-3 text-dark fw-bold fs-md-3 fs-lg-4"> <span>Hi, I'm Shella May Cuenca</span>
+            </div>
+            <p class="text-dark fst-italic">Polytechnic University of the Philippines</p>
+            <div class="intro-text text-dark fw-normal fs-6 fs-lg-6">
+              <p>
+                An aspiring Web Developer, turning creative ideas into digital experiences.
+                With a keen eye for design and a passion for clean, functional code, strives to build websites that
+                are
+                both
+                visually engaging and user-friendly.
+              </p>
+              <div class="container">
+                <div class="row linkInAboutMe justify-content-center justify-content-lg-start">
+                  <a class="recent-work col-xxl-5 col-xl-4 col-lg-5 col-xs-6 col-sm-5 view-my-work rounded-5 m-1 px-4 py-2 text-white text-decoration-none me-1 text-center"
+                    style="background: linear-gradient(to right, #ff00ff, #8000ff); 
                     font-family: 'Open Sans', sans-serif;" href="https://she1028.github.io/API_Utilization/"
-                  target="_blank">
-                  Recent Work</a>
-                <a class="contact-me col-xxl-3 col-xl-4 col-lg-5 col-xs-6 col-sm-5 rounded-5 m-1 me-1 px-4 py-2 text-decoration-none text-center ms-1 mt-xs-3-start"
-                  href="contact-me.html" target="_blank" title="Directly contact me"
-                  style="border: 1px solid rgb(234, 92, 234); font-family: 'Open Sans', sans-serif; color:#ff82ff">Contact
-                  Me</a>
+                    target="_blank">
+                    Recent Work</a>
+                  <a class="contact-me col-xxl-3 col-xl-4 col-lg-5 col-xs-6 col-sm-5 rounded-5 m-1 me-1 px-4 py-2 text-decoration-none text-center ms-1 mt-xs-3-start"
+                    href="contact-me.html" target="_blank" title="Directly contact me"
+                    style="border: 1px solid rgb(234, 92, 234); font-family: 'Open Sans', sans-serif; color:#ff82ff">Contact
+                    Me</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-xxl-4 col-xl-4 col-lg-5 col-md-9 col-sm-9 text-center order-1 order-md-1 order-lg-2 picture1">
-        <img src="../../main_assets/img/picture 2.png" class="img-fluid shadow-lg w-75 " alt="Responsive image"
-          style="border-radius: 50em;">
+        <div class="col-5 text-center order-1 order-md-1 order-lg-2 picture1">
+          <img src="main_assets/img/main-picture3.jpg" class="img-fluid shadow-lg main-picture"
+            alt="Responsive image">
+        </div>
       </div>
     </div>
   </section>
@@ -332,7 +332,7 @@
           </ul>
         </div>
         <div class="col-lg-4 col-11">
-          <img src="../../main_assets/img/Main_logo.png" class="w-25">
+          <img src="main_assets/img/Main_logo.png" class="w-25">
           <div class="text-light text-left">
             <div>
               <hr class="mx-5" style="border: 1px solid white;">

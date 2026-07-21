@@ -13,14 +13,17 @@
 
 html,
 body {
-    height: 100%;
+    height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
     scroll-padding-top: 8em;
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
 }
 
-.view-website, .view-github {
+.view-website,
+.view-github {
     background: linear-gradient(to right, #ff00ff, #8000ff);
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
@@ -28,7 +31,8 @@ body {
     display: inline-block;
 }
 
-.view-website, .view-github:hover {
+.view-website,
+.view-github:hover {
     transform: scale(0.9);
 }
 
@@ -57,7 +61,8 @@ body {
 
 
 body {
-    background-image: url('../../main_assets/img/canva\ stars.png');
+    background-image: url('../../main_assets/img/bg-img.png');
+    background-size: cover;
 }
 
 
@@ -76,10 +81,6 @@ body {
 
 }
 
-.home-page {
-    margin-top: 5em;
-}
-
 .display-3>span,
 .footer-name {
     background: var(--color1);
@@ -95,9 +96,9 @@ body {
     transform: translateY(-10px);
 }
 
-.col-4>img {
+/* .col-4>img {
     border-radius: 70em;
-}
+} */
 
 .header {
     font-family: playfair;
@@ -295,11 +296,12 @@ body {
     background: rgba(255, 0, 255, 0.7);
     border-color: #ff00ff;
 }
+
 .view-github {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;      
-    overflow: hidden;  
+    gap: 0.5rem;
+    overflow: hidden;
     padding: 0.5rem 0.75rem;
     transition: transform 0.35s ease;
 }
@@ -308,7 +310,7 @@ body {
     white-space: nowrap;
     max-width: 0;
     overflow: hidden;
-    opacity: 0;         
+    opacity: 0;
     transition: max-width 0.35s ease, opacity 0.25s ease 0.1s;
 }
 
@@ -318,13 +320,59 @@ body {
 
 .view-github:hover .btn-text {
     max-width: 160px;
-    opacity: 1;         
+    opacity: 1;
 }
 
-.b-icon{
+.b-icon {
     display: inline-block;
     opacity: 1;
 }
+
+.picture1 {
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: stretch;
+}
+
+.main-picture {
+    width: 82%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Fade from transparent (left) to opaque (right) */
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            rgba(0, 0, 0, 0.2) 5%,
+            rgba(0, 0, 0, 0.6) 10%,
+            black 35%,
+            black 100%);
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            rgba(0, 0, 0, 0.2) 10%,
+            rgba(0, 0, 0, 0.6) 20%,
+            black 35%,
+            black 100%);
+}
+
+
+/* .main-picture {
+    filter: drop-shadow(0 0 15px #6bf5ff);
+       animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+} */
+
 
 
 /* Responsive Design */
@@ -332,7 +380,7 @@ body {
     .carousel-card.prev {
         transform: translateX(-280px) scale(0.8) translateZ(-120px) rotateY(12deg);
     }
-    
+
     .carousel-card.next {
         transform: translateX(280px) scale(0.8) translateZ(-120px) rotateY(-12deg);
     }
@@ -342,15 +390,15 @@ body {
     .carousel-3d-container {
         padding: 40px 60px;
     }
-    
+
     .carousel-card {
         width: 550px;
     }
-    
+
     .carousel-card.prev {
         transform: translateX(-220px) scale(0.75) translateZ(-100px) rotateY(10deg);
     }
-    
+
     .carousel-card.next {
         transform: translateX(220px) scale(0.75) translateZ(-100px) rotateY(-10deg);
     }
@@ -361,30 +409,30 @@ body {
         padding: 40px 20px;
         min-height: 550px;
     }
-    
+
     .carousel-3d-wrapper {
         height: 500px;
     }
-    
+
     .carousel-card {
         width: 90%;
         max-width: 450px;
     }
-    
+
     .carousel-card.prev,
     .carousel-card.next {
         opacity: 0.3;
         transform: translateX(0) scale(0.7) translateZ(-150px);
     }
-    
+
     .carousel-card.prev {
         transform: translateX(-50px) scale(0.7) translateZ(-150px);
     }
-    
+
     .carousel-card.next {
         transform: translateX(50px) scale(0.7) translateZ(-150px);
     }
-    
+
     .carousel-btn-3d {
         width: 45px;
         height: 45px;
@@ -393,6 +441,7 @@ body {
 }
 
 @media (max-width: 576px) {
+
     .carousel-card.prev,
     .carousel-card.next {
         opacity: 0.2;
