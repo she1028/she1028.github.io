@@ -21,7 +21,9 @@ body {
     margin: 0;
     padding: 0;
 }
-
+.home-page {
+    margin-top: 4.5em;
+}
 .view-website,
 .view-github {
     background: linear-gradient(to right, #ff00ff, #8000ff);
@@ -49,6 +51,17 @@ body {
     transform: scale(0.9);
 }
 
+.contact-me {
+    border: 1px solid rgb(234, 92, 234);
+    font-family: 'Open Sans', sans-serif;
+    color: #ff82ff
+}
+
+.recent-work {
+    background: linear-gradient(to right, #ff00ff, #8000ff);
+    font-family: 'Open Sans', sans-serif;
+}
+
 .nav-link:hover {
     color: violet;
     border-radius: 20px;
@@ -56,7 +69,8 @@ body {
 
 .nav-link {
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: rgb(201, 43, 201);
+    font-weight: 600;
 }
 
 
@@ -81,7 +95,7 @@ body {
 
 }
 
-.display-3>span,
+.display-5>span,
 .footer-name {
     background: var(--color1);
     -webkit-background-clip: text;
@@ -336,8 +350,8 @@ body {
 }
 
 .main-picture {
-    width: 82%;
-    height: 100%;
+    width: 93%;
+    /* height: 190%; */
     object-fit: cover;
     display: block;
     /* Fade from transparent (left) to opaque (right) */
@@ -355,6 +369,11 @@ body {
             black 100%);
 }
 
+/* .home {
+     background-image: url('../../main_assets/img/main-picture5.png');
+     background-repeat: no-repeat;
+     background-size: crop;
+     background-position: center; */
 
 /* .main-picture {
     filter: drop-shadow(0 0 15px #6bf5ff);
