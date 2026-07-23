@@ -52,9 +52,9 @@ body {
 }
 
 .contact-me {
-    border: 1px solid rgb(234, 92, 234);
+    border: 1px solid rgb(246, 68, 246);
     font-family: 'Open Sans', sans-serif;
-    color: #ff82ff
+    color: #ff5bff
 }
 
 .recent-work {
@@ -91,11 +91,12 @@ body {
 }
 
 .about-container {
-    backdrop-filter: blur(10px) saturate(150%) brightness(250%);
+    backdrop-filter: blur(10px) saturate(150%);
 
 }
 
 .display-5>span,
+.about-text,
 .footer-name {
     background: var(--color1);
     -webkit-background-clip: text;
@@ -368,7 +369,9 @@ body {
             black 35%,
             black 100%);
 }
-
+.card{
+    border: 1px solid rgb(221, 160, 221);
+}
 /* .home {
      background-image: url('../../main_assets/img/main-picture5.png');
      background-repeat: no-repeat;
