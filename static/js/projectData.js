@@ -1,4 +1,4 @@
-var projects = [
+export var projects = [
     {
         title: "Apple iPad Air",
         desc: `A modern product showcase inspired by Apple’s design language.

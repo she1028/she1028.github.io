@@ -90,11 +90,13 @@ body {
     backdrop-filter: blur(20px) saturate(150%) brightness(50%);
 }
 
-.about-container {
+.about-container
+ {
     backdrop-filter: blur(10px) saturate(150%);
-
 }
-
+.footer-container{
+    backdrop-filter: blur(10px) saturate(150%) brightness(85%);
+}
 .display-5>span,
 .about-text,
 .footer-name {

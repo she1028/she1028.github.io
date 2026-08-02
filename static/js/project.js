@@ -1,0 +1,115 @@
+ 
+import { projects } from "./projectData.js";
+
+ const faders = document.querySelectorAll('.fade-on-scroll');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        faders.forEach(fader => observer.observe(fader));
+
+        // 3D Carousel functionality (rendered from projectData.js)
+        let currentSlideIndex = 0;
+        let carouselCards = [];
+        let indicators3d = [];
+        let totalCards = 0;
+
+        const carouselWrapper = document.querySelector('#projects-carousel');
+        const indicatorsWrapper = document.querySelector('#projects-indicators');
+
+        function renderProjects() {
+            if (!carouselWrapper || !indicatorsWrapper || typeof projects === 'undefined' || !Array.isArray(projects)) {
+                return;
+            }
+
+            carouselWrapper.innerHTML = '';
+            indicatorsWrapper.innerHTML = '';
+
+            projects.forEach((project, index) => {
+                const card = document.createElement('div');
+                card.className = 'carousel-card';
+                if (index === 0) {
+                    card.classList.add('active');
+                }
+                card.dataset.index = index;
+                card.innerHTML = `
+          <div class="card-content text-light text-center rounded-4 p-3"
+            style="background: linear-gradient(to top, black, rgba(117, 117, 117, 0.8));">
+            <a href="`+ project.link + `" target="_blank">
+              <img src="`+ project.img + `" class="w-100" alt="` + project.title + `">
+            </a>
+            <h3 class="header mt-3 mx-3"><b>`+ project.title + `</b></h3>
+            <p>`+ project.desc + `</p>
+            <a href="`+ project.githublink + `" target="_blank" title="Visit the Website"
+              class="py-2 px-4 mt-3 mx-3 view-website rounded-3">View Github</a>
+            <a href="`+ project.link + `" target="_blank" title="View GitHub Repository"
+              class="py-2 px-4 mt-3 rounded-5 view-github"><span class="btn-text">Live Website </span>
+              <i class="bi bi-caret-right-fill p-0 b-icon"></i>
+            </a>
+          </div>
+        `;
+                carouselWrapper.appendChild(card);
+
+                const indicator = document.createElement('span');
+                indicator.className = 'indicator-3d';
+                if (index === 0) {
+                    indicator.classList.add('active');
+                }
+                indicator.addEventListener('click', () => goToSlide(index));
+                indicatorsWrapper.appendChild(indicator);
+            });
+
+            carouselCards = Array.from(document.querySelectorAll('.carousel-card'));
+            indicators3d = Array.from(document.querySelectorAll('.indicator-3d'));
+            totalCards = carouselCards.length;
+        }
+
+        function updateCarousel() {
+            if (!totalCards) {
+                return;
+            }
+
+            carouselCards.forEach((card, index) => {
+                card.classList.remove('active', 'prev', 'next');
+
+                if (index === currentSlideIndex) {
+                    card.classList.add('active');
+                } else if (index === (currentSlideIndex - 1 + totalCards) % totalCards) {
+                    card.classList.add('prev');
+                } else if (index === (currentSlideIndex + 1) % totalCards) {
+                    card.classList.add('next');
+                }
+            });
+
+            indicators3d.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlideIndex);
+            });
+        }
+
+        function changeSlide(direction) {
+            if (!totalCards) {
+                return;
+            }
+            currentSlideIndex = (currentSlideIndex + direction + totalCards) % totalCards;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            if (!totalCards) {
+                return;
+            }
+            currentSlideIndex = index;
+            updateCarousel();
+        }
+
+        renderProjects();
+        updateCarousel();
+
+        window.changeSlide = changeSlide;
+window.goToSlide = goToSlide;
