@@ -39,12 +39,10 @@
           <img src="main_assets/img/Cuenca_logo.png" alt="Logo" class="logo" width="40" height="auto">
         </a>
       </div>
-        
-      
     </div>
 
 
-    <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="sidebarMenu"
+    <div class="offcanvas offcanvas-start text-bg-body" tabindex="-1" id="sidebarMenu"
       aria-labelledby="sidebarMenuLabel" style="--bs-offcanvas-width: 200px;">
 
       <div class="offcanvas-header">
@@ -52,7 +50,7 @@
           <img src="main_assets/img/Cuenca_logo.png" alt="Logo" width="45">
         </a>
 
-        <button type="button" class="btn-close btn-close-secondary" data-bs-dismiss="offcanvas"
+        <button type="button" class="btn-close btn-close-body" data-bs-dismiss="offcanvas"
           aria-label="Close"></button>
       </div>
 
@@ -284,7 +282,7 @@
 
 
   <!-- Footer -->
-  <section class="footer-container bg-trasnparent bg-blur mt-5 border">
+  <section class="footer-container bg-body bg-blur mt-5 border">
     <div class="container-fluid h-50 p-2 m-0">
       <div class="row mx-5 text-center d-flex justify-content-between align-items-center py-3">
 
@@ -320,7 +318,7 @@
         </div>
 
         <div>
-          <hr class="mx-5 border border-dark">
+          <hr class="mx-5 border border-black">
 
           <div class="text-center pb-3" style="color: #676767;">
             <img src="main_assets/img/Main_logo.png" alt="Logo" width="30">
@@ -357,6 +355,8 @@
 
     faders.forEach(fader => observer.observe(fader));
 
+    
+
     // Dark Mode
     const html = document.documentElement;
     const button = document.getElementById("dark-theme");
@@ -384,11 +384,15 @@
     function updateButton(theme) {
 
       if (theme === "dark") {
+        document.body.style.backgroundImage =
+          "url('main_assets/img/canva stars.png')";
 
         button.innerHTML =
           '<i class="bi bi-sun-fill me-1"></i>Light';
 
       } else {
+        document.body.style.backgroundImage =
+          "url('main_assets/img/bg-img.png')";
 
         button.innerHTML =
           '<i class="bi bi-moon-stars-fill me-1"></i>Dark';
