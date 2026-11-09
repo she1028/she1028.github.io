@@ -467,6 +467,13 @@
      outline: 2px solid var(--purple);
      outline-offset: 2px;
  }
+ 
+video {
+    width: 120px;
+    max-width: 200px;
+    height: auto;
+}
+
 
  @media (prefers-reduced-motion: reduce) {
      .progress-bar {
