@@ -14,9 +14,19 @@
  }
 
  body {
-     background-image: url(img/canva\ stars.png);
+     /* background-image: url(img/canva\ stars.png); */
      color: #EDEEF3;
      font-family: "Plus Jakarta Sans", -apple-system, sans-serif;
+ }
+ .bg-video{
+    position:fixed;
+    /* top: 0;
+    left: 0; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
  }
 
  a {
@@ -468,7 +478,7 @@
      outline-offset: 2px;
  }
  
-video {
+.logo-video {
     width: 120px;
     max-width: 200px;
     height: auto;
