@@ -32,3 +32,11 @@
                 link.classList.toggle('active', link.getAttribute('href') === '#' + current);
             });
         });
+
+        // Curso Glow
+        const cursorGlow = document.querySelector(".cursor-glow");
+
+document.addEventListener("mousemove", (event) => {
+    cursorGlow.style.left = event.clientX + "px";
+    cursorGlow.style.top = event.clientY + "px";
+});
