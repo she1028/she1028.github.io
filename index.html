@@ -4,7 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shella Portfolio</title>
+    <title>Shella May Cuenca | Front-End Developer Portfolio</title>
+    <meta name="description"
+        content="Shella May Cuenca is a BS Information Technology student at PUP Santo Tomas who builds responsive web and mobile apps, open to front-end developer internships.">
+    <meta name="author" content="Shella May Cuenca">
+    <meta property="og:title" content="Shella May Cuenca | Front-End Developer Portfolio">
+    <meta property="og:description"
+        content="IT student building responsive web and mobile apps. Open to front-end developer internships.">
+    <meta property="og:url" content="https://she1028.github.io/My-Portfolio/">
+    <meta property="og:image" content="https://she1028.github.io/My-Portfolio/img/myPic.png">
+    <meta property="og:type" content="website">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
@@ -12,21 +21,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="icon" href="img/Logo V3.png">
-    <link href="styles.css" rel="stylesheet">
+    <!-- ?v= is for cache busting: bump it after editing CSS/JS -->
+    <link href="styles.css?v=2" rel="stylesheet">
+    <!-- .js class: reveal animations only hide content when JS is running -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
-<video class="bg-video" autoplay muted loop playinline>
-    <source src="video/star_galaxy_V1.mp4" type="video/mp4">
-</video>
+    <video class="bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="video/star_galaxy_V1.mp4" type="video/mp4">
+    </video>
+
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg sticky-top py-3">
         <div class="container">
-            <a class="navbar-brand" href="#">
-
-                <span class="log"><img src="img/Logo V3.png" style="width: 40px; height: auto;"></span>
+            <a class="navbar-brand" href="#home" aria-label="Shella May Cuenca, back to top">
+                <img src="img/Logo V3.png" alt="Shella May logo" style="width: 40px; height: auto;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navMenu">
@@ -35,295 +48,539 @@
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#journey">Journey</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
-                <a href="#contact" class="btn btn-grad btn-sm d-none d-lg-inline-flex align-items-center gap-1">Hire Me
+                <!-- TODO: switch to this Resume button once the PDF is uploaded
+                <a href="files/Shella-May-Cuenca-Resume.pdf" target="_blank" rel="noopener"
+                    class="btn btn-grad btn-sm d-none d-lg-inline-flex align-items-center gap-1">Resume
+                    <i class="bi bi-file-earmark-arrow-down"></i></a> -->
+                <a href="#contact"
+                    class="btn btn-grad btn-sm d-none d-lg-inline-flex align-items-center gap-1">Let's Talk
                     <i class="bi bi-arrow-up-right"></i></a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <header class="hero m-2" id="home">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 hero-container1">
+    <main>
+        <!-- HERO -->
+        <header class="hero m-2" id="home">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 hero-container1">
 
-                    <span class="eyebrow mb-2">I'm a Web Developer</span>
-                    <div class="fs-1 fw-bold lh-sm">Hi, I'm <span class="text-grad">Shella May</span><br>I turn ideas
-                        into digital experiences</div>
-                    <p class="lead-text mt-3">I create modern, responsive websites that combine clean design, seamless
-                        functionality, and engaging user experiences.</p>
+                        <span class="status-pill mb-3"><span class="dot-live"></span> Open to OJT / Internship</span>
+                        <h1 class="hero-title">Hi, I'm <span class="text-grad">Shella May</span><br>an aspiring
+                            <span class="visually-hidden">Front-End Developer</span><span class="typed"
+                                aria-hidden="true" data-roles="Front‑End Developer|UI/UX Designer|Web Developer|Mobile App Developer">Front‑End Developer</span><span class="caret" aria-hidden="true"></span></h1>
+                        <p class="lead-text mt-3">I'm a 4th-year IT student who designs and builds responsive web and
+                            mobile apps, from UI design to connecting back-end services. I'm looking for a front-end
+                            internship where I can work on real products with a real team.</p>
 
-                    <div class="d-flex gap-3 mt-4 flex-wrap">
-                        <a href="#projects" class="btn btn-grad rounded-pill">View My Work</a>
-                        <a href="#" class="btn btn-outline-soft">Download CV <i class="bi bi-download ms-1"></i></a>
+                        <div class="d-flex gap-3 mt-4 flex-wrap">
+                            <a href="#projects" class="btn btn-grad rounded-pill">View My Projects</a>
+                            <a href="https://www.linkedin.com/in/shellamay-cuenca" target="_blank" rel="noopener"
+                                class="btn btn-outline-soft"><i class="bi bi-linkedin me-1"></i> LinkedIn</a>
+                            <!-- TODO: restore once the resume PDF is uploaded
+                            <a href="files/Shella-May-Cuenca-Resume.pdf" target="_blank" rel="noopener"
+                                class="btn btn-outline-soft">Download Resume <i class="bi bi-download ms-1"></i></a> -->
+                        </div>
+                        <p class="text-uppercase small fw-semibold mt-5 mb-2"
+                            style="color:var(--text-soft); letter-spacing:0.03em;">Tools I build with</p>
+                        <div class="tech-row">
+                            <div class="tech-icon" style="color:#E44D26;" title="HTML5"><i class="bi bi-filetype-html"></i><span class="visually-hidden">HTML5</span></div>
+                            <div class="tech-icon" style="color:#2965F1;" title="CSS3"><i class="bi bi-filetype-css"></i><span class="visually-hidden">CSS3</span></div>
+                            <div class="tech-icon" style="color:#F0DB4F;" title="JavaScript"><i class="bi bi-filetype-js"></i><span class="visually-hidden">JavaScript</span></div>
+                            <div class="tech-icon" style="color:#8C5CF5;" title="Bootstrap"><i class="bi bi-bootstrap-fill"></i><span class="visually-hidden">Bootstrap</span></div>
+                            <div class="tech-icon" style="color:#3DDC84;" title="Android (Kotlin)"><i class="bi bi-android2"></i><span class="visually-hidden">Android with Kotlin</span></div>
+                            <div class="tech-icon" style="color:#F24E1E;" title="Figma"><i class="bi bi-vector-pen"></i><span class="visually-hidden">Figma</span></div>
+                            <div class="tech-icon" style="color:#F05032;" title="Git"><i class="bi bi-git"></i><span class="visually-hidden">Git</span></div>
+                            <div class="tech-icon" style="color:#EDEEF3;" title="GitHub"><i class="bi bi-github"></i><span class="visually-hidden">GitHub</span></div>
+                        </div>
                     </div>
-                    <p class="text-uppercase small fw-semibold mt-5 mb-2"
-                        style="color:var(--text-soft); letter-spacing:0.03em;">Technologies I work with</p>
-                    <div class="tech-row">
-                        <div class="tech-icon" style="color:#E44D26;"><i class="bi bi-filetype-html"></i></div>
-                        <div class="tech-icon" style="color:#2965F1;"><i class="bi bi-filetype-css"></i></div>
-                        <div class="tech-icon" style="color:#F0DB4F;"><i class="bi bi-filetype-js"></i></div>
-                        <div class="tech-icon" style="color:#3178C6;"><i class="bi bi-github"></i></div>
-                        <div class="tech-icon" style="color:#F05032;"><i class="bi bi-git"></i></div>
-                    </div>
-                </div>
 
-                <div class="col-lg-6 hero-container2">
-                    <div class="hero-photo-wrap">
-                        <div class="glow-circle"></div>
-                        <div class="dots-deco"></div>
-                        <img src="img/myPic.png" class=" MyPic">
-                        <div class="code-float">
-                            <div class="code-head"><span>&lt;/&gt; Code</span><span class="dot-live"></span></div>
-                            name: <span class="s">'Shella May'</span>,
-                            skills: [<span class="s">'HTML'</span>,<span class="s">'CSS'</span>,
-                            <span class="s">'JavaScript'</span>,<span class="s">'React'</span>],
-                            passion: <span class="s">'Building things
-                                for the web'</span>
-                            };</pre>
+                    <div class="col-lg-6 hero-container2">
+                        <div class="hero-photo-wrap">
+                            <div class="glow-circle"></div>
+                            <div class="dots-deco"></div>
+                            <img src="img/myPic.png" class="MyPic" alt="Portrait of Shella May Cuenca">
+                            <div class="code-float" aria-hidden="true">
+                                <div class="code-head"><span>&lt;/&gt; about.js</span><span class="dot-live"></span>
+                                </div>
+<pre><span class="k">const</span> me = {
+  name: <span class="s">'Shella May'</span>,
+  role: <span class="s">'Front-End Dev'</span>,
+  stack: [<span class="s">'HTML'</span>, <span class="s">'CSS'</span>,
+          <span class="s">'JS'</span>, <span class="s">'Kotlin'</span>],
+  status: <span class="s">'open to OJT'</span>
+};</pre>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- ABOUT -->
-    <section class="section section-border" id="about">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6">
-                    <span class="eyebrow">About Me</span>
-                    <h2 class="fw-bold" style="font-size:clamp(26px,3vw,34px);">I'm passionate about creating digital
-                        solutions</h2>
-                    <p class="lead-text mt-3">With 4+ years of experience in web development, I help businesses and
-                        individuals bring their ideas to life through clean, efficient, and user-friendly code.</p>
-                    <a href="#" class="btn btn-outline-soft mt-3">Learn More About Me <i
-                            class="bi bi-arrow-right ms-1"></i></a>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row g-4">
-                        <div class="col-6">
-                            <div class="about-stat">
-                                <div class="stat-icon"><i class="bi bi-calendar3"></i></div>
-                                <div>
-                                    <div class="stat-num">4+</div>
-                                    <div class="stat-label">Years Experience</div>
+        <!-- ABOUT -->
+        <section class="section section-border" id="about">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <span class="eyebrow">About Me</span>
+                        <h2 class="section-title">A student who learns by building</h2>
+                        <p class="lead-text mt-3">I'm a <strong>4th-year BS Information Technology</strong> student at
+                            the <strong>Polytechnic University of the Philippines – Santo Tomas</strong> and a
+                            <strong>President's Lister</strong> (GWA 1.18). I enjoy the whole path from a Figma design
+                            to a working, responsive app.</p>
+                        <p class="lead-text">For our capstone, MaizeNex, I designed and built the screens of an Android
+                            app that uses on-device machine learning to spot nutrient deficiencies in corn, and I
+                            handled merging my teammates' work into each release. I've also built Curra, a full-stack
+                            finance tracker on Supabase, and the front end of a catering booking site. Next, I'm
+                            deepening my JavaScript and learning React.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="fact-card">
+                                    <div class="stat-icon"><i class="bi bi-mortarboard"></i></div>
+                                    <div>
+                                        <div class="stat-label">Course</div>
+                                        <div class="fact-value">BS Information Technology</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="fact-card">
+                                    <div class="stat-icon"><i class="bi bi-building"></i></div>
+                                    <div>
+                                        <div class="stat-label">School</div>
+                                        <div class="fact-value">PUP – Santo Tomas Branch</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="fact-card">
+                                    <div class="stat-icon"><i class="bi bi-calendar3"></i></div>
+                                    <div>
+                                        <div class="stat-label">Expected graduation</div>
+                                        <div class="fact-value">2027</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="fact-card">
+                                    <div class="stat-icon"><i class="bi bi-geo-alt"></i></div>
+                                    <div>
+                                        <div class="stat-label">Based in</div>
+                                        <div class="fact-value">Malvar, Batangas</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="about-stat">
-                                <div class="stat-icon"><i class="bi bi-code-slash"></i></div>
-                                <div>
-                                    <div class="stat-num">50+</div>
-                                    <div class="stat-label">Projects Completed</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section section-border" id="skills">
+            <div class="container text-center">
+                <span class="eyebrow">Skills</span>
+                <h2 class="section-title mb-5">What I work with</h2>
+                <div class="row g-4 text-start">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill-card">
+                            <div class="skill-head"><i class="bi bi-window"></i> Front-End</div>
+                            <div class="chip-row">
+                                <span class="chip">HTML5</span>
+                                <span class="chip">CSS3</span>
+                                <span class="chip">JavaScript</span>
+                                <span class="chip">Bootstrap</span>
+                                <span class="chip">Tailwind CSS</span>
+                                <span class="chip">Responsive Web Design</span>
+                                <span class="chip">Chart.js</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill-card">
+                            <div class="skill-head"><i class="bi bi-phone"></i> Mobile</div>
+                            <div class="chip-row">
+                                <span class="chip">Kotlin</span>
+                                <span class="chip">Android XML Layouts</span>
+                                <span class="chip">CameraX</span>
+                                <span class="chip">Localization (EN/FIL)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill-card">
+                            <div class="skill-head"><i class="bi bi-database"></i> Back-End &amp; Databases</div>
+                            <div class="chip-row">
+                                <span class="chip">Firebase Auth</span>
+                                <span class="chip">Cloud Firestore</span>
+                                <span class="chip">Firebase Storage</span>
+                                <span class="chip">Cloud Functions</span>
+                                <span class="chip">Supabase</span>
+                                <span class="chip">PostgreSQL (RLS)</span>
+                                <span class="chip">REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill-card">
+                            <div class="skill-head"><i class="bi bi-cpu"></i> AI &amp; Machine Learning</div>
+                            <div class="chip-row">
+                                <span class="chip">TensorFlow Lite</span>
+                                <span class="chip">Image Classification</span>
+                                <span class="chip">ML Kit</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill-card">
+                            <div class="skill-head"><i class="bi bi-code-slash"></i> Other Languages</div>
+                            <div class="chip-row">
+                                <span class="chip">Python</span>
+                                <span class="chip">PHP</span>
+                                <span class="chip">SQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill-card">
+                            <div class="skill-head"><i class="bi bi-tools"></i> Tools &amp; Design</div>
+                            <div class="chip-row">
+                                <span class="chip">Git &amp; GitHub</span>
+                                <span class="chip">Android Studio</span>
+                                <span class="chip">VS Code</span>
+                                <span class="chip">Figma</span>
+                                <span class="chip">Canva</span>
+                                <span class="chip">Blender</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="learning-note mt-4"><i class="bi bi-lightning-charge-fill"></i> Currently learning:
+                    <strong>React</strong> and <strong>advanced JavaScript</strong></p>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="section section-border" id="projects">
+            <div class="container text-center">
+                <span class="eyebrow">Projects</span>
+                <h2 class="section-title mb-5">Things I've built</h2>
+                <div class="row g-4 text-start">
+
+                    <!-- FEATURED: MaizeNex (Android app) -->
+                    <div class="col-12">
+                        <article class="project-card featured-card">
+                            <div class="row g-0 align-items-stretch">
+                                <div class="col-md-5 featured-visual">
+                                    <div class="phone-frame">
+                                        <div class="phone-notch"></div>
+                                        <div class="phone-screen has-shot">
+                                            <img src="img/projects/maizenex.webp" loading="lazy"
+                                                alt="MaizeNex welcome screen: 'Healthier maize. Stronger harvests.' with Create Account and Log In buttons">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="project-body featured-body">
+                                        <span class="kind-badge"><i class="bi bi-phone"></i> Android App · Capstone Project</span>
+                                        <h3 class="project-title mt-2">MaizeNex: Corn Nutrient Deficiency Detector</h3>
+                                        <p class="project-role">Front-End Developer &amp; UI/UX Designer · Team project</p>
+                                        <p>An Android app that detects nitrogen, phosphorus, and potassium deficiencies
+                                            from a photo of a corn leaf using an on-device TensorFlow Lite (MobileNetV3)
+                                            model, then recommends matching fertilizers.</p>
+                                        <ul class="feature-list">
+                                            <li><i class="bi bi-check2"></i><span>Designed and built 12 screens, including
+                                                    camera capture, results, a multi-sample field assessment with
+                                                    severity rating, scan history, weather, and a community feed</span></li>
+                                            <li><i class="bi bi-check2"></i><span>Dark mode and English/Filipino language
+                                                    support</span></li>
+                                            <li><i class="bi bi-check2"></i><span>Connected Firebase Auth, Firestore, and
+                                                    Storage, and sent weather requests through Cloud Functions so the
+                                                    API key never ships in the app</span></li>
+                                            <li><i class="bi bi-check2"></i><span>Merged and tested teammates' feature
+                                                    branches over 8 integration rounds while keeping the build, tests,
+                                                    and lint passing</span></li>
+                                        </ul>
+                                        <div class="tag-row">
+                                            <span class="tag">Kotlin</span><span class="tag">XML</span>
+                                            <span class="tag">Firebase</span><span class="tag">TensorFlow Lite</span>
+                                            <span class="tag">CameraX</span><span class="tag">ML Kit</span>
+                                            <span class="tag">Android Studio</span>
+                                        </div>
+                                        <!-- Capstone repo is private. TODO: demo video / APK links
+                                        <div class="project-links">
+                                            <a href="DEMO_VIDEO_URL" target="_blank" rel="noopener" class="project-link"><i class="bi bi-play-circle"></i> Demo video</a>
+                                            <a href="APK_URL" target="_blank" rel="noopener" class="project-link"><i class="bi bi-android2"></i> Download APK</a>
+                                        </div> -->
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="about-stat">
-                                <div class="stat-icon"><i class="bi bi-emoji-smile"></i></div>
-                                <div>
-                                    <div class="stat-num">30+</div>
-                                    <div class="stat-label">Happy Clients</div>
+                        </article>
+                    </div>
+
+                    <!-- Curra -->
+                    <div class="col-md-6">
+                        <article class="project-card">
+                            <a href="https://she1028.github.io/Curra/" target="_blank" rel="noopener"
+                                class="project-thumb thumb-shot" tabindex="-1" aria-hidden="true">
+                                <img src="img/projects/curra.jpg" alt="" loading="lazy">
+                                <span class="num">Full-stack Web App</span>
+                            </a>
+                            <div class="project-body">
+                                <h3 class="project-title">Curra: Personal Finance Tracker</h3>
+                                <p class="project-role">Full-Stack Web Developer</p>
+                                <p>Log income and expenses, track savings goals, and set daily spending budgets. It has
+                                    Chart.js dashboards, PDF reports, CSV import/export, live exchange rates,
+                                    notifications, and a light/dark theme. I designed the PostgreSQL database with Row
+                                    Level Security so each user sees only their own records, including savings goals
+                                    shared across groups.</p>
+                                <div class="tag-row">
+                                    <span class="tag">HTML5/CSS3</span><span class="tag">JavaScript</span>
+                                    <span class="tag">Bootstrap</span><span class="tag">Chart.js</span>
+                                    <span class="tag">Supabase</span><span class="tag">PostgreSQL</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://she1028.github.io/Curra/" target="_blank" rel="noopener"
+                                        class="project-link"><i class="bi bi-box-arrow-up-right"></i> Live</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="about-stat">
-                                <div class="stat-icon"><i class="bi bi-trophy"></i></div>
-                                <div>
-                                    <div class="stat-num">100%</div>
-                                    <div class="stat-label">Client Satisfaction</div>
+                        </article>
+                    </div>
+
+                    <!-- YMZM Catering -->
+                    <div class="col-md-6">
+                        <article class="project-card">
+                            <div class="project-thumb thumb-shot">
+                                <img src="img/projects/ymzm.webp" alt="" loading="lazy">
+                                <span class="num">Website</span>
+                            </div>
+                            <div class="project-body">
+                                <h3 class="project-title">YMZM Catering &amp; Event Rentals</h3>
+                                <p class="project-role">Front-End Developer &amp; UI/UX Designer</p>
+                                <p>I built the responsive front end of a catering booking site: landing page,
+                                    packages, food menu, rentals catalog, and sign-in pages. I also designed the booking
+                                    flow, from customizing a package to requesting a quote and confirming. Customers get
+                                    automatic email confirmations and quotations, and an admin side lets the catering
+                                    head approve and manage bookings.</p>
+                                <div class="tag-row">
+                                    <span class="tag">HTML5/CSS3</span><span class="tag">JavaScript</span>
+                                    <span class="tag">Bootstrap</span><span class="tag">Email Integration</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/she1028/YMZM" target="_blank" rel="noopener"
+                                        class="project-link"><i class="bi bi-github"></i> Code</a>
+                                    <!-- PHP site, can't run on GitHub Pages. TODO: Live link once hosted -->
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- SKILLS -->
-    <section class="section section-border" id="skills">
-        <div class="container text-center">
-            <span class="eyebrow">My Skills</span>
-            <h2 class="fw-bold mb-5" style="font-size:clamp(26px,3vw,34px);">Technologies I Master</h2>
-            <div class="row g-5 text-start">
-                <div class="col-md-4">
-                    <div class="skill-row" data-pct="95">
-                        <div class="top"><span>HTML</span><span class="pct">95%</span></div>
-                        <div class="progress">
-                            <div class="progress-bar"></div>
-                        </div>
-                    </div>
-                    <div class="skill-row" data-pct="90">
-                        <div class="top"><span>CSS</span><span class="pct">90%</span></div>
-                        <div class="progress">
-                            <div class="progress-bar"></div>
-                        </div>
-                    </div>
-                    <div class="skill-row" data-pct="90">
-                        <div class="top"><span>JavaScript</span><span class="pct">90%</span></div>
-                        <div class="progress">
-                            <div class="progress-bar"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="skill-row" data-pct="85">
-                        <div class="top"><span>React.js</span><span class="pct">85%</span></div>
-                        <div class="progress">
-                            <div class="progress-bar"></div>
-                        </div>
-                    </div>
-                    <div class="skill-row" data-pct="80">
-                        <div class="top"><span>Next.js</span><span class="pct">80%</span></div>
-                        <div class="progress">
-                            <div class="progress-bar"></div>
-                        </div>
-                    </div>
-                    <div class="skill-row" data-pct="85">
-                        <div class="top"><span>TypeScript</span><span class="pct">85%</span></div>
-                        <div class="progress">
-                            <div class="progress-bar"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="skill-row" data-pct="80">
-                        <div class="top"><span>Node.js</span><span class="pct">80%</span></div>
-                        <div class="progress">
-                            <div class="progress-bar"></div>
-                        </div>
-                    </div>
-                    <div class="skill-row" data-pct="90">
-                        <div class="top"><span>Tailwind CSS</span><span class="pct">90%</span></div>
-                        <div class="progress">
-                            <div class="progress-bar"></div>
-                        </div>
-                    </div>
-                    <div class="skill-row" data-pct="85">
-                        <div class="top"><span>Git</span><span class="pct">85%</span></div>
-                        <div class="progress">
-                            <div class="progress-bar"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section section-border" id="projects">
-        <div class="container text-center">
-            <span class="eyebrow">Featured Projects</span>
-            <h2 class="fw-bold mb-5" style="font-size:clamp(26px,3vw,34px);">Some of My Recent Work</h2>
-            <div class="row g-4 text-start" id="projectGrid">
-                <div class="col-md-4">
-                    <div class="project-card">
-                        <div class="project-thumb thumb-ecom"><span class="num">01</span></div>
-                        <div class="project-body">
-                            <h5>E-Commerce Platform</h5>
-                            <p>Full-stack e-commerce solution with modern UI/UX</p>
-                            <a href="#" class="project-link">View Project <i class="bi bi-arrow-up-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="project-card">
-                        <div class="project-thumb thumb-task"><span class="num">02</span></div>
-                        <div class="project-body">
-                            <h5>Task Management App</h5>
-                            <p>Collaborative task management application</p>
-                            <a href="#" class="project-link">View Project <i class="bi bi-arrow-up-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="project-card">
-                        <div class="project-thumb thumb-crypto"><span class="num">03</span></div>
-                        <div class="project-body">
-                            <h5>Crypto Dashboard</h5>
-                            <p>Real-time cryptocurrency tracking dashboard</p>
-                            <a href="#" class="project-link">View Project <i class="bi bi-arrow-up-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="dots-nav" id="dotsNav">
-                <button class="active" data-i="0" aria-label="Page 1"></button>
-                <button data-i="1" aria-label="Page 2"></button>
-                <button data-i="2" aria-label="Page 3"></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6">
-                    <span class="eyebrow">Let's Work Together</span>
-                    <h2 class="fw-bold" style="font-size:clamp(26px,3vw,34px);">Have a project in mind?</h2>
-                    <p class="lead-text mt-3">I'm always open to discussing new projects and opportunities. Let's create
-                        something amazing together!</p>
-                    <a href="mailto:hello@shellamaydev.com" class="btn btn-grad mt-3">Get In Touch <i
-                            class="bi bi-arrow-up-right ms-1"></i></a>
-                </div>
-                <div class="col-lg-6">
-                    <div class="quote-card mb-4">
-                        <i class="bi bi-quote"></i>
-                        <p class="mt-2 mb-3">Shella is an exceptional developer who delivers high-quality work on time.
-                            His attention to detail and problem-solving skills are outstanding.</p>
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="avatar-circle">SJ</div>
-                            <div>
-                                <div class="fw-semibold">Sarah Johnson</div>
-                                <div class="small" style="color:var(--text-soft);">CEO, TechStart</div>
+                    <!-- El Nido -->
+                    <div class="col-md-6">
+                        <article class="project-card">
+                            <a href="https://she1028.github.io/ElNido/" target="_blank" rel="noopener"
+                                class="project-thumb thumb-shot" tabindex="-1" aria-hidden="true">
+                                <img src="img/projects/elnido.jpg" alt="" loading="lazy">
+                                <span class="num">Website</span>
+                            </a>
+                            <div class="project-body">
+                                <h3 class="project-title">El Nido, Palawan</h3>
+                                <p>A travel site for El Nido with a photo gallery, tour packages you can filter by
+                                    tour type, guides to the top spots, and an embedded Google Map.</p>
+                                <div class="tag-row">
+                                    <span class="tag">HTML</span><span class="tag">CSS</span>
+                                    <span class="tag">Bootstrap</span><span class="tag">JavaScript</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://she1028.github.io/ElNido/" target="_blank" rel="noopener"
+                                        class="project-link"><i class="bi bi-box-arrow-up-right"></i> Live</a>
+                                    <a href="https://github.com/she1028/ElNido" target="_blank" rel="noopener"
+                                        class="project-link"><i class="bi bi-github"></i> Code</a>
+                                </div>
                             </div>
+                        </article>
+                    </div>
+
+                    <!-- ReciMeals -->
+                    <div class="col-md-6">
+                        <article class="project-card">
+                            <a href="https://she1028.github.io/ReciMeals/" target="_blank" rel="noopener"
+                                class="project-thumb thumb-shot" tabindex="-1" aria-hidden="true">
+                                <img src="img/projects/recimeals.jpg" alt="" loading="lazy">
+                                <span class="num">Website</span>
+                            </a>
+                            <div class="project-body">
+                                <h3 class="project-title">ReciMeals</h3>
+                                <p>A recipe website with breakfast, lunch and dinner, and dessert categories, a recipe
+                                    search page, and pages for each recipe.</p>
+                                <div class="tag-row">
+                                    <span class="tag">HTML</span><span class="tag">CSS</span>
+                                    <span class="tag">Bootstrap</span><span class="tag">JavaScript</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://she1028.github.io/ReciMeals/" target="_blank" rel="noopener"
+                                        class="project-link"><i class="bi bi-box-arrow-up-right"></i> Live</a>
+                                    <a href="https://github.com/she1028/ReciMeals" target="_blank" rel="noopener"
+                                        class="project-link"><i class="bi bi-github"></i> Code</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <a href="https://github.com/she1028" target="_blank" rel="noopener"
+                    class="btn btn-outline-soft mt-5">See more on GitHub <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+        </section>
+
+        <!-- JOURNEY: education, seminars, certificates, organizations -->
+        <section class="section section-border" id="journey">
+            <div class="container">
+                <div class="text-center">
+                    <span class="eyebrow">Journey</span>
+                    <h2 class="section-title mb-5">Education &amp; milestones</h2>
+                </div>
+                <!-- Ordered oldest to newest -->
+                <ol class="timeline">
+                    <li class="timeline-item">
+                        <div class="timeline-dot"><i class="bi bi-book-fill"></i></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Graduated 2023</span>
+                            <h3 class="timeline-title">Senior High School, STEM Strand</h3>
+                            <p class="timeline-org">Malvar Senior High School · Poblacion, Malvar, Batangas</p>
+                            <p>Consistently With Honors.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"><i class="bi bi-mortarboard-fill"></i></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2023 – 2027 (expected)</span>
+                            <h3 class="timeline-title">BS Information Technology</h3>
+                            <p class="timeline-org">PUP – Santo Tomas Branch · Santo Tomas, Batangas</p>
+                            <p>Consistent academic honors. Capstone: MaizeNex, an Android app that detects corn
+                                nutrient deficiencies with on-device machine learning.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"><i class="bi bi-patch-check-fill"></i></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">October 2025</span>
+                            <h3 class="timeline-title">Data Science Essentials with Python</h3>
+                            <p class="timeline-org">Cisco Networking Academy</p>
+                            <p>Python fundamentals for data analysis: working with data, basic statistics, and
+                                visualization.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"><i class="bi bi-trophy-fill"></i></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2026</span>
+                            <h3 class="timeline-title">President's Lister</h3>
+                            <p class="timeline-org">PUP – Santo Tomas Branch</p>
+                            <p>Academic honor for a semester GWA of 1.18.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"><i class="bi bi-patch-check-fill"></i></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">October 2026</span>
+                            <h3 class="timeline-title">Responsive Web Design</h3>
+                            <p class="timeline-org">freeCodeCamp</p>
+                            <p>Semantic HTML, modern CSS, Flexbox, Grid, and responsive layouts, practiced through
+                                hands-on projects.<br>
+                                <span class="credential">Credential ID: fcc-a3ed6823-bab3-4a02-a136-7acbcacc3ce8-rwdv9</span>
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section section-border" id="contact">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <span class="eyebrow">Let's Connect</span>
+                        <h2 class="section-title">Looking for an intern?</h2>
+                        <p class="lead-text mt-3">I'm currently looking for an <strong>OJT / internship</strong> in
+                            front-end or web development. If your team has an opening, or you just want to talk about
+                            my work, I'd love to hear from you.</p>
+                        <div class="d-flex gap-3 mt-3 flex-wrap">
+                            <a href="mailto:shellamaycuenca21@gmail.com?subject=Internship%20Opportunity"
+                                class="btn btn-grad">Email Me <i class="bi bi-envelope ms-1"></i></a>
+                            <a href="https://www.linkedin.com/in/shellamay-cuenca" target="_blank" rel="noopener"
+                                class="btn btn-outline-soft"><i class="bi bi-linkedin me-1"></i> LinkedIn</a>
+                            <!-- TODO: restore once the resume PDF is uploaded
+                            <a href="files/Shella-May-Cuenca-Resume.pdf" target="_blank" rel="noopener"
+                                class="btn btn-outline-soft">Resume<i class="bi bi-download ms-1"></i></a> -->
                         </div>
                     </div>
-                    <div>
-                        <p class="text-uppercase small fw-semibold mb-3"
-                            style="color:var(--text-soft); letter-spacing:0.03em;">Follow Me</p>
-                        <div class="social-row mb-3">
-                            <a href="#"><i class="bi bi-github"></i></a>
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
+                    <div class="col-lg-6">
+                        <div class="quote-card mb-4">
+                            <p class="text-uppercase small fw-semibold mb-3"
+                                style="color:var(--text-soft); letter-spacing:0.03em;">What I'm looking for</p>
+                            <ul class="looking-list">
+                                <li><i class="bi bi-briefcase"></i><span><strong>Role:</strong> Front-End / Web
+                                        Developer Intern</span></li>
+                                <li><i class="bi bi-clock-history"></i><span><strong>Required hours:</strong> 500
+                                        hours</span></li>
+                                <!-- TODO: OJT start date
+                                <li><i class="bi bi-calendar-event"></i><span><strong>Available from:</strong>
+                                        Month Year</span></li> -->
+                                <li><i class="bi bi-geo-alt"></i><span><strong>Location:</strong> Malvar, Batangas
+                                        (open to nearby areas)</span></li>
+                                <li><i class="bi bi-laptop"></i><span><strong>Setup:</strong> On-site, hybrid, or
+                                        remote</span></li>
+                            </ul>
                         </div>
-                        <p class="small mb-1" style="color:var(--text-soft);"><i
-                                class="bi bi-envelope me-2"></i>shellamaycuenca21@gmail.com</p>
-                        <p class="small" style="color:var(--text-soft);"><i class="bi bi-telephone me-2"></i>(+63)
-                            0319575334</p>
+                        <div>
+                            <div class="social-row mb-3">
+                                <a href="https://github.com/she1028" target="_blank" rel="noopener"
+                                    aria-label="GitHub"><i class="bi bi-github"></i></a>
+                                <a href="https://www.linkedin.com/in/shellamay-cuenca" target="_blank" rel="noopener"
+                                    aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="mailto:shellamaycuenca21@gmail.com" aria-label="Email"><i
+                                        class="bi bi-envelope"></i></a>
+                            </div>
+                            <p class="small mb-1" style="color:var(--text-soft);"><i
+                                    class="bi bi-envelope me-2"></i>shellamaycuenca21@gmail.com</p>
+                            <p class="small mb-1"><a href="tel:+639319575334" class="contact-line"><i
+                                        class="bi bi-telephone me-2"></i>+63 931 957 5334</a></p>
+                            <p class="small"><a href="https://www.linkedin.com/in/shellamay-cuenca" target="_blank"
+                                    rel="noopener" class="contact-line"><i
+                                        class="bi bi-linkedin me-2"></i>linkedin.com/in/shellamay-cuenca</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
+
     <div class="d-flex justify-content-end align-items-end">
-        <video class="logo-video" autoplay loop muted playsinline>
+        <video class="logo-video" autoplay loop muted playsinline aria-hidden="true">
             <source src="video/Logo V3.mp4" type="video/mp4">
         </video>
     </div>
-    <!-- Cursor Glow -->
-     <div class="cursor-glow"></div>
 
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" aria-hidden="true"></div>
 
     <footer>
         <div class="container d-flex justify-content-between flex-wrap gap-2">
-            <span>© 2026 Shella Developer. All rights reserved.</span>
-            <span>Made with <i class="bi bi-heart-fill text-danger"></i> by Shella</span>
+            <span>© 2026 Shella May Cuenca</span>
+            <span>Designed &amp; built by Shella May · <a href="https://github.com/she1028/My-Portfolio"
+                    target="_blank" rel="noopener" class="footer-link">View source</a></span>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=4"></script>
 
 </body>
 
