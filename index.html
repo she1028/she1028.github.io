@@ -22,7 +22,7 @@
         rel="stylesheet">
     <link rel="icon" href="img/Logo V3.png">
     <!-- ?v= is for cache busting: bump it after editing CSS/JS -->
-    <link href="styles.css?v=2" rel="stylesheet">
+    <link href="styles.css?v=14" rel="stylesheet">
     <!-- .js class: reveal animations only hide content when JS is running -->
     <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -187,6 +187,41 @@
             <div class="container text-center">
                 <span class="eyebrow">Skills</span>
                 <h2 class="section-title mb-5">What I work with</h2>
+
+                <!-- Stats: numbers count up on scroll. data-count-from counts matching elements (projects-data = entries in PROJECTS) -->
+                <div class="row g-3 g-lg-4 text-start mb-5">
+                    <div class="col-12 col-sm-4">
+                        <div class="stat-card">
+                            <div class="stat-top">
+                                <div class="stat-badge"><i class="bi bi-code-slash"></i></div>
+                                <span class="stat-count" data-count-from="projects-data">8</span>
+                            </div>
+                            <div class="stat-name">Projects</div>
+                            <div class="stat-sub">Web &amp; mobile apps built</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="stat-card">
+                            <div class="stat-top">
+                                <div class="stat-badge"><i class="bi bi-stack"></i></div>
+                                <span class="stat-count" data-count-from="#skills .skill-card .chip">31</span>
+                            </div>
+                            <div class="stat-name">Technologies</div>
+                            <div class="stat-sub">Tools &amp; languages used</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="stat-card">
+                            <div class="stat-top">
+                                <div class="stat-badge"><i class="bi bi-patch-check"></i></div>
+                                <span class="stat-count" data-count-from="#journey .bi-patch-check-fill">2</span>
+                            </div>
+                            <div class="stat-name">Certificates</div>
+                            <div class="stat-sub">Verified skills</div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row g-4 text-start">
                     <div class="col-md-6 col-lg-4">
                         <div class="skill-card">
@@ -267,178 +302,244 @@
             </div>
         </section>
 
-        <!-- PROJECTS -->
+        <!-- PROJECTS: bento grid. Card details live in PROJECTS (script.js) and open in the dialog below -->
         <section class="section section-border" id="projects">
-            <div class="container text-center">
-                <span class="eyebrow">Projects</span>
-                <h2 class="section-title mb-5">Things I've built</h2>
-                <div class="row g-4 text-start">
+            <div class="container">
+                <div class="text-center">
+                    <span class="eyebrow">Projects</span>
+                    <h2 class="section-title">Things I've built</h2>
+                    <p class="lead-text mb-5">Web and mobile apps, from my capstone to my first websites. Open a card
+                        to see the details.</p>
+                </div>
 
-                    <!-- FEATURED: MaizeNex (Android app) -->
-                    <div class="col-12">
-                        <article class="project-card featured-card">
-                            <div class="row g-0 align-items-stretch">
-                                <div class="col-md-5 featured-visual">
-                                    <div class="phone-frame">
-                                        <div class="phone-notch"></div>
-                                        <div class="phone-screen has-shot">
-                                            <img src="img/projects/maizenex.webp" loading="lazy"
-                                                alt="MaizeNex welcome screen: 'Healthier maize. Stronger harvests.' with Create Account and Log In buttons">
-                                        </div>
+                <div class="bento-wrap">
+                    <div class="bento-pill"><i class="bi bi-cursor-fill"></i> Click a card to open it</div>
+
+                    <div class="bento">
+
+                        <!-- MaizeNex -->
+                        <article class="bento-card b5 bento-tall maize-card">
+                            <div class="bento-text bento-narrow">
+                                <div class="bento-badge badge-green"><i class="bi bi-phone"></i></div>
+                                <p class="bento-kicker kicker-green">Android app · Capstone</p>
+                                <h3 class="bento-title">MaizeNex</h3>
+                                <p class="bento-desc">Detects nitrogen, phosphorus, and potassium deficiencies from a
+                                    photo of a corn leaf, then recommends fertilizers.</p>
+                            </div>
+                            <img class="bento-phone phone-a" src="img/projects/maizenex.webp" alt="" loading="lazy">
+                            <img class="bento-phone phone-b" src="img/projects/maizenex-home.webp" alt="" loading="lazy">
+                            <button class="bento-hit" type="button" data-open="maizenex"
+                                aria-label="Open MaizeNex details"></button>
+                        </article>
+
+                        <!-- Curra -->
+                        <article class="bento-card b4 bento-tall">
+                            <div class="bento-text">
+                                <div class="bento-badge"><i class="bi bi-bar-chart-line"></i></div>
+                                <p class="bento-kicker">Full-stack web app</p>
+                                <h3 class="bento-title">Curra</h3>
+                                <p class="bento-desc">A personal finance tracker with dashboards, budgets, and shared
+                                    savings goals.</p>
+                                <div class="bento-chips">
+                                    <span>Chart.js</span><span>Supabase</span><span>Row Level Security</span>
+                                </div>
+                            </div>
+                            <!-- Separate browser windows that scroll while the card is hovered -->
+                            <div class="shot-scroller scroller-bottom">
+                                <div class="scroll-strip">
+                                    <div class="shot-frame">
+                                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                                        <img src="img/projects/curra-dashboard.webp" alt="" loading="lazy">
+                                    </div>
+                                    <div class="shot-frame">
+                                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                                        <img src="img/projects/curra-savings.webp" alt="" loading="lazy">
+                                    </div>
+                                    <div class="shot-frame">
+                                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                                        <img src="img/projects/curra-expenses.webp" alt="" loading="lazy">
                                     </div>
                                 </div>
-                                <div class="col-md-7">
-                                    <div class="project-body featured-body">
-                                        <span class="kind-badge"><i class="bi bi-phone"></i> Android App · Capstone Project</span>
-                                        <h3 class="project-title mt-2">MaizeNex: Corn Nutrient Deficiency Detector</h3>
-                                        <p class="project-role">Front-End Developer &amp; UI/UX Designer · Team project</p>
-                                        <p>An Android app that detects nitrogen, phosphorus, and potassium deficiencies
-                                            from a photo of a corn leaf using an on-device TensorFlow Lite (MobileNetV3)
-                                            model, then recommends matching fertilizers.</p>
-                                        <ul class="feature-list">
-                                            <li><i class="bi bi-check2"></i><span>Designed and built 12 screens, including
-                                                    camera capture, results, a multi-sample field assessment with
-                                                    severity rating, scan history, weather, and a community feed</span></li>
-                                            <li><i class="bi bi-check2"></i><span>Dark mode and English/Filipino language
-                                                    support</span></li>
-                                            <li><i class="bi bi-check2"></i><span>Connected Firebase Auth, Firestore, and
-                                                    Storage, and sent weather requests through Cloud Functions so the
-                                                    API key never ships in the app</span></li>
-                                            <li><i class="bi bi-check2"></i><span>Merged and tested teammates' feature
-                                                    branches over 8 integration rounds while keeping the build, tests,
-                                                    and lint passing</span></li>
-                                        </ul>
-                                        <div class="tag-row">
-                                            <span class="tag">Kotlin</span><span class="tag">XML</span>
-                                            <span class="tag">Firebase</span><span class="tag">TensorFlow Lite</span>
-                                            <span class="tag">CameraX</span><span class="tag">ML Kit</span>
-                                            <span class="tag">Android Studio</span>
-                                        </div>
-                                        <!-- Capstone repo is private. TODO: demo video / APK links
-                                        <div class="project-links">
-                                            <a href="DEMO_VIDEO_URL" target="_blank" rel="noopener" class="project-link"><i class="bi bi-play-circle"></i> Demo video</a>
-                                            <a href="APK_URL" target="_blank" rel="noopener" class="project-link"><i class="bi bi-android2"></i> Download APK</a>
-                                        </div> -->
+                            </div>
+                            <button class="bento-hit" type="button" data-open="curra"
+                                aria-label="Open Curra details"></button>
+                        </article>
+
+                        <!-- Early web projects -->
+                        <div class="b3 bento-stack">
+                            <article class="bento-card bento-row">
+                                <img class="row-thumb" src="img/projects/renaissance.jpg" alt="" loading="lazy">
+                                <div class="row-text">
+                                    <p class="bento-kicker kicker-violet">Early project</p>
+                                    <h3 class="row-title">Renaissance Gallery</h3>
+                                    <p class="row-desc">Paintings and sculptures</p>
+                                </div>
+                                <span class="row-arrow"><i class="bi bi-arrow-up-right"></i></span>
+                                <button class="bento-hit" type="button" data-open="renaissance"
+                                    aria-label="Open Renaissance Gallery details"></button>
+                            </article>
+                            <article class="bento-card bento-row">
+                                <img class="row-thumb" src="img/projects/ipad-air.jpg" alt="" loading="lazy">
+                                <div class="row-text">
+                                    <p class="bento-kicker kicker-violet">Early project</p>
+                                    <h3 class="row-title">iPad Air Product Page</h3>
+                                    <p class="row-desc">Landing page with hero video</p>
+                                </div>
+                                <span class="row-arrow"><i class="bi bi-arrow-up-right"></i></span>
+                                <button class="bento-hit" type="button" data-open="ipad"
+                                    aria-label="Open iPad Air Product Page details"></button>
+                            </article>
+                            <article class="bento-card bento-row">
+                                <img class="row-thumb thumb-light" src="img/projects/calculator.jpg" alt="" loading="lazy">
+                                <div class="row-text">
+                                    <p class="bento-kicker kicker-violet">Early project</p>
+                                    <h3 class="row-title">Calculator</h3>
+                                    <p class="row-desc">With calculation history</p>
+                                </div>
+                                <span class="row-arrow"><i class="bi bi-arrow-up-right"></i></span>
+                                <button class="bento-hit" type="button" data-open="calculator"
+                                    aria-label="Open Calculator details"></button>
+                            </article>
+                        </div>
+
+                        <!-- YMZM -->
+                        <article class="bento-card b7">
+                            <div class="bento-text bento-half">
+                                <div class="bento-badge badge-orange"><i class="bi bi-cup-hot"></i></div>
+                                <p class="bento-kicker kicker-orange">Catering booking site</p>
+                                <h3 class="bento-title">YMZM Catering</h3>
+                                <p class="bento-desc">I designed the booking flow and built the front end, from
+                                    packages to a confirmed reservation.</p>
+                                <div class="bento-flow">
+                                    <span>Package</span><i class="bi bi-chevron-right"></i>
+                                    <span>Quote</span><i class="bi bi-chevron-right"></i>
+                                    <span class="flow-end">Confirm</span>
+                                </div>
+                            </div>
+                            <!-- Separate browser windows that scroll while the card is hovered -->
+                            <div class="shot-scroller scroller-side">
+                                <div class="scroll-strip">
+                                    <div class="shot-frame">
+                                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                                        <img src="img/projects/ymzm-home.webp" alt="" loading="lazy">
+                                    </div>
+                                    <div class="shot-frame">
+                                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                                        <img src="img/projects/ymzm-menu.webp" alt="" loading="lazy">
+                                    </div>
+                                    <div class="shot-frame">
+                                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                                        <img src="img/projects/ymzm-rentals.webp" alt="" loading="lazy">
                                     </div>
                                 </div>
                             </div>
+                            <button class="bento-hit" type="button" data-open="ymzm"
+                                aria-label="Open YMZM Catering details"></button>
                         </article>
-                    </div>
 
-                    <!-- Curra -->
-                    <div class="col-md-6">
-                        <article class="project-card">
-                            <a href="https://she1028.github.io/Curra/" target="_blank" rel="noopener"
-                                class="project-thumb thumb-shot" tabindex="-1" aria-hidden="true">
-                                <img src="img/projects/curra.jpg" alt="" loading="lazy">
-                                <span class="num">Full-stack Web App</span>
-                            </a>
-                            <div class="project-body">
-                                <h3 class="project-title">Curra: Personal Finance Tracker</h3>
-                                <p class="project-role">Full-Stack Web Developer</p>
-                                <p>Log income and expenses, track savings goals, and set daily spending budgets. It has
-                                    Chart.js dashboards, PDF reports, CSV import/export, live exchange rates,
-                                    notifications, and a light/dark theme. I designed the PostgreSQL database with Row
-                                    Level Security so each user sees only their own records, including savings goals
-                                    shared across groups.</p>
-                                <div class="tag-row">
-                                    <span class="tag">HTML5/CSS3</span><span class="tag">JavaScript</span>
-                                    <span class="tag">Bootstrap</span><span class="tag">Chart.js</span>
-                                    <span class="tag">Supabase</span><span class="tag">PostgreSQL</span>
+                        <!-- Websites reel -->
+                        <article class="bento-card b5 reel-card-wrap">
+                            <div class="bento-text bento-half">
+                                <div class="bento-badge badge-violet"><i class="bi bi-globe2"></i></div>
+                                <p class="bento-kicker kicker-violet">Websites</p>
+                                <h3 class="bento-title">Travel &amp; recipe sites</h3>
+                                <p class="bento-desc"><span class="reel-name">El Nido</span> is in front. Spin the
+                                    reel to switch.</p>
+                                <button class="reel-spin" type="button"><i class="bi bi-arrow-repeat"></i> Spin the
+                                    reel</button>
+                            </div>
+                            <div class="reel">
+                                <div class="reel-item is-front" data-id="elnido" data-name="El Nido">
+                                    <img src="img/projects/elnido.jpg" alt="" loading="lazy">
                                 </div>
-                                <div class="project-links">
-                                    <a href="https://she1028.github.io/Curra/" target="_blank" rel="noopener"
-                                        class="project-link"><i class="bi bi-box-arrow-up-right"></i> Live</a>
+                                <div class="reel-item" data-id="recimeals" data-name="ReciMeals">
+                                    <img src="img/projects/recimeals.jpg" alt="" loading="lazy">
                                 </div>
                             </div>
+                            <button class="bento-hit" type="button" data-open="elnido"
+                                aria-label="Open El Nido details"></button>
                         </article>
-                    </div>
 
-                    <!-- YMZM Catering -->
-                    <div class="col-md-6">
-                        <article class="project-card">
-                            <div class="project-thumb thumb-shot">
-                                <img src="img/projects/ymzm.webp" alt="" loading="lazy">
-                                <span class="num">Website</span>
-                            </div>
-                            <div class="project-body">
-                                <h3 class="project-title">YMZM Catering &amp; Event Rentals</h3>
-                                <p class="project-role">Front-End Developer &amp; UI/UX Designer</p>
-                                <p>I built the responsive front end of a catering booking site: landing page,
-                                    packages, food menu, rentals catalog, and sign-in pages. I also designed the booking
-                                    flow, from customizing a package to requesting a quote and confirming. Customers get
-                                    automatic email confirmations and quotations, and an admin side lets the catering
-                                    head approve and manage bookings.</p>
-                                <div class="tag-row">
-                                    <span class="tag">PHP</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
-                                    <span class="tag">Bootstrap</span><span class="tag">Email Integration</span>
-                                    <span class="tag">MYSQL</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/she1028/YMZM" target="_blank" rel="noopener"
-                                        class="project-link"><i class="bi bi-github"></i> Code</a>
-                                    <!-- PHP site, can't run on GitHub Pages. TODO: Live link once hosted -->
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- El Nido -->
-                    <div class="col-md-6">
-                        <article class="project-card">
-                            <a href="https://she1028.github.io/ElNido/" target="_blank" rel="noopener"
-                                class="project-thumb thumb-shot" tabindex="-1" aria-hidden="true">
-                                <img src="img/projects/elnido.jpg" alt="" loading="lazy">
-                                <span class="num">Website</span>
-                            </a>
-                            <div class="project-body">
-                                <h3 class="project-title">El Nido, Palawan</h3>
-                                <p>A travel site for El Nido with a photo gallery, tour packages you can filter by
-                                    tour type, guides to the top spots, and an embedded Google Map.</p>
-                                <div class="tag-row">
-                                    <span class="tag">HTML</span><span class="tag">CSS</span>
-                                    <span class="tag">Bootstrap</span><span class="tag">JavaScript</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://she1028.github.io/ElNido/" target="_blank" rel="noopener"
-                                        class="project-link"><i class="bi bi-box-arrow-up-right"></i> Live</a>
-                                    <a href="https://github.com/she1028/ElNido" target="_blank" rel="noopener"
-                                        class="project-link"><i class="bi bi-github"></i> Code</a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- ReciMeals -->
-                    <div class="col-md-6">
-                        <article class="project-card">
-                            <a href="https://she1028.github.io/ReciMeals/" target="_blank" rel="noopener"
-                                class="project-thumb thumb-shot" tabindex="-1" aria-hidden="true">
-                                <img src="img/projects/recimeals.jpg" alt="" loading="lazy">
-                                <span class="num">Website</span>
-                            </a>
-                            <div class="project-body">
-                                <h3 class="project-title">ReciMeals</h3>
-                                <p>A recipe website with breakfast, lunch and dinner, and dessert categories, a recipe
-                                    search page, and pages for each recipe.</p>
-                                <div class="tag-row">
-                                    <span class="tag">HTML</span><span class="tag">CSS</span>
-                                    <span class="tag">Bootstrap</span><span class="tag">JavaScript</span>
-                                    <span class="tag">API Integration</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://she1028.github.io/ReciMeals/" target="_blank" rel="noopener"
-                                        class="project-link"><i class="bi bi-box-arrow-up-right"></i> Live</a>
-                                    <a href="https://github.com/she1028/ReciMeals" target="_blank" rel="noopener"
-                                        class="project-link"><i class="bi bi-github"></i> Code</a>
-                                </div>
-                            </div>
-                        </article>
                     </div>
                 </div>
-                <a href="https://github.com/she1028" target="_blank" rel="noopener"
-                    class="btn btn-outline-soft mt-5">See more on GitHub <i class="bi bi-arrow-right ms-1"></i></a>
+
+                <div class="text-center">
+                    <a href="https://github.com/she1028" target="_blank" rel="noopener"
+                        class="btn btn-outline-soft mt-5">See more on GitHub <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
             </div>
+
+            <!-- Project details dialog (filled in by script.js) -->
+            <dialog class="project-dialog" id="projectDialog" aria-labelledby="pdTitle">
+                <button class="pd-close" type="button" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+                <div class="pd-grid">
+                    <div class="pd-media">
+                        <img class="pd-img" src="" alt="">
+                        <!-- Web projects with several screenshots: browser-frame gallery -->
+                        <div class="pd-gallery" hidden>
+                            <div class="bento-browser pd-browser">
+                                <div class="browser-dots"><span></span><span></span><span></span></div>
+                                <img class="pd-gallery-img" src="" alt="">
+                            </div>
+                            <div class="pd-gallery-nav">
+                                <button class="screen-nav pd-prev" type="button" aria-label="Previous screenshot"><i
+                                        class="bi bi-chevron-left"></i></button>
+                                <p class="pd-caption" aria-live="polite"></p>
+                                <button class="screen-nav pd-next" type="button" aria-label="Next screenshot"><i
+                                        class="bi bi-chevron-right"></i></button>
+                            </div>
+                            <div class="pd-dots" role="tablist" aria-label="Choose a screenshot"></div>
+                        </div>
+                        <!-- MaizeNex only: phone slideshow of app screens -->
+                        <div class="phone-showcase" tabindex="0" role="region" aria-roledescription="carousel"
+                            aria-label="MaizeNex app screens" hidden>
+                            <div class="phone-stage">
+                                <button class="screen-nav prev" type="button" aria-label="Previous screen"><i
+                                        class="bi bi-chevron-left"></i></button>
+                                <div class="phone-frame">
+                                    <div class="phone-notch"></div>
+                                    <div class="phone-screen has-shot">
+                                        <img class="app-screen is-active" src="img/projects/maizenex.webp" loading="lazy"
+                                            data-caption="Welcome screen with language switcher"
+                                            alt="MaizeNex welcome screen with Create Account and Log In buttons">
+                                        <img class="app-screen" src="img/projects/maizenex-home.webp" loading="lazy"
+                                            data-caption="Home: live weather, quick leaf scan, and recent scans"
+                                            alt="MaizeNex home screen with a weather card and recent scans">
+                                        <img class="app-screen" src="img/projects/maizenex-results.webp" loading="lazy"
+                                            data-caption="Field assessment: multi-sample results with severity"
+                                            alt="MaizeNex assessment results with two leaf samples and severity rated Severe">
+                                        <img class="app-screen" src="img/projects/maizenex-community.webp" loading="lazy"
+                                            data-caption="Community feed with sensitive-photo blur"
+                                            alt="MaizeNex community feed with a blurred sensitive photo">
+                                        <img class="app-screen" src="img/projects/maizenex-facts.webp" loading="lazy"
+                                            data-caption="Facts: articles on corn care and nutrient deficiencies"
+                                            alt="MaizeNex facts screen listing articles about corn care">
+                                    </div>
+                                </div>
+                                <button class="screen-nav next" type="button" aria-label="Next screen"><i
+                                        class="bi bi-chevron-right"></i></button>
+                            </div>
+                            <p class="screen-caption" aria-live="polite">Welcome screen with language switcher</p>
+                            <div class="screen-tabs" role="tablist" aria-label="Choose a screen">
+                                <button type="button" role="tab" class="is-active" aria-selected="true">Welcome</button>
+                                <button type="button" role="tab" aria-selected="false">Home</button>
+                                <button type="button" role="tab" aria-selected="false">Results</button>
+                                <button type="button" role="tab" aria-selected="false">Community</button>
+                                <button type="button" role="tab" aria-selected="false">Facts</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd-body">
+                        <p class="pd-kind"></p>
+                        <h3 class="pd-title" id="pdTitle"></h3>
+                        <p class="pd-role"></p>
+                        <p class="pd-desc"></p>
+                        <ul class="pd-points"></ul>
+                        <div class="pd-tags"></div>
+                        <div class="pd-links"></div>
+                    </div>
+                </div>
+            </dialog>
         </section>
 
         <!-- JOURNEY: education, seminars, certificates, organizations -->
@@ -583,7 +684,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=13"></script>
 
 </body>
 
